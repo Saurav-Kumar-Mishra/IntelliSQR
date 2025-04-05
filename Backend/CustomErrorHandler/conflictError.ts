@@ -1,10 +1,9 @@
-import customError from "./customError";
+import customError from './customError'
 
 class ConflictError extends customError {
-
-  constructor(message: string, property: string) {
-    super(message,409,property);
-  }
+    constructor(message: string, property: string) {
+        super(message, 409, property)
+    }
 }
 
-export default ConflictError;
+export default ConflictError

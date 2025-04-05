@@ -1,14 +1,17 @@
-import { Router } from 'express';   // Import Router from express
-import { loginHandler, registration, home } from '../controller/authController';  // Correctly import the handlers
-import authorizationCheck from '../middleware/authorization_middleware';
+import { Router } from 'express'
+import { loginHandler, registration, home } from '../controller/authController' 
+import authorizationCheck from '../middleware/authorization_middleware'
 
-const routes = Router();  // Create a new instance of Router
-// console.log(loginHandler)
-// POST route for user login
-routes.post('/login', loginHandler);
+const routes = Router() 
 
-// POST route for user registration
-routes.post('/register', registration);
-routes.get('/home',authorizationCheck, home);
+routes.post('/login', loginHandler)
 
-export default routes;  // Export the routes
+
+routes.post('/register', registration)
+routes.get('/home', authorizationCheck, home)
+
+export default routes 
+
+
+// password has been encrypted by using bcrypt library
+// this cookie is valid for 1hr
